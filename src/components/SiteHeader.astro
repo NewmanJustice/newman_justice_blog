@@ -1,15 +1,17 @@
 ---
+import { url } from '@/lib/url';
+
 const pathname = Astro.url.pathname;
 
 const nav = [
-  { label: 'Writing', href: '/posts/' },
-  { label: 'About', href: '/about/' },
+  { label: 'Writing', href: url('posts/') },
+  { label: 'About', href: url('about/') },
 ];
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="wordmark" aria-label="NewmanJustice — home">
+    <a href={url('')} class="wordmark" aria-label="NewmanJustice — home">
       <span class="wordmark-name">NewmanJustice</span>
     </a>
 

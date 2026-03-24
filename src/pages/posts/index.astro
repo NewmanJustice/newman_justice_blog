@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { url } from '@/lib/url';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts', p => !p.data.draft);
@@ -38,7 +39,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
       <ul class="posts-list" role="list">
         {seriesPosts.map(post => (
           <li>
-            <a href={`/posts/${post.slug}/`} class="series-row">
+            <a href={url(`posts/${post.slug}/`)} class="series-row">
               <div class="series-row-body">
                 <h2 class="series-title">{post.data.title}</h2>
                 <p class="series-desc">{post.data.description}</p>

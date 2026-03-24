@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { url } from '@/lib/url';
 import { type CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -30,9 +31,9 @@ const next = currentIndex < siblings.length - 1 ? siblings[currentIndex + 1] : n
 
       {seriesSlug && (
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="/posts/">Writing</a>
+          <a href={url('posts/')}>Writing</a>
           <span aria-hidden="true">/</span>
-          <a href={`/posts/${seriesSlug}/`}>{seriesTitle}</a>
+          <a href={url(`posts/${seriesSlug}/`)}>{seriesTitle}</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">{title}</span>
         </nav>
@@ -65,13 +66,13 @@ const next = currentIndex < siblings.length - 1 ? siblings[currentIndex + 1] : n
       {siblings.length > 0 && (
         <nav class="series-nav" aria-label="Series navigation">
           {prev && (
-            <a href={`/posts/${seriesSlug}/${prev.slug.split('/')[1]}/`} class="series-nav-link prev">
+            <a href={url(`posts/${seriesSlug}/${prev.slug.split('/')[1]}/`)} class="series-nav-link prev">
               <span class="nav-label">Previous</span>
               <span class="nav-title">{prev.data.title}</span>
             </a>
           )}
           {next && (
-            <a href={`/posts/${seriesSlug}/${next.slug.split('/')[1]}/`} class="series-nav-link next">
+            <a href={url(`posts/${seriesSlug}/${next.slug.split('/')[1]}/`)} class="series-nav-link next">
               <span class="nav-label">Next</span>
               <span class="nav-title">{next.data.title}</span>
             </a>

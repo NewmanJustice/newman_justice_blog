@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { url } from '@/lib/url';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -37,7 +38,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="breadcrumb-inner">
-        <a href="/posts/">Writing</a>
+        <a href={url('posts/')}>Writing</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">{title}</span>
       </div>
@@ -74,7 +75,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
               const entrySlug = child.slug.split('/')[1];
               return (
                 <li>
-                  <a href={`/posts/${parent.slug}/${entrySlug}/`} class="entry-link">
+                  <a href={url(`posts/${parent.slug}/${entrySlug}/`)} class="entry-link">
                     <span class="entry-number">
                       {String(child.data.seriesOrder ?? i + 1).padStart(2, '0')}
                     </span>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CharacterSVG from '@/components/CharacterSVG.astro';
+import { url } from '@/lib/url';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts', p => !p.data.draft);
@@ -51,7 +52,7 @@ type Pose = typeof poses[number];
               const count = childCounts[seriesSlug] ?? 0;
               return (
                 <li>
-                  <a href={`/posts/${seriesSlug}/`} class="character-card">
+                  <a href={url(`posts/${seriesSlug}/`)} class="character-card">
                     <div class="character-figure" aria-hidden="true">
                       <CharacterSVG pose={pose} index={i} />
                     </div>
