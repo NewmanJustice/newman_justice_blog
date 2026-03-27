@@ -8,6 +8,11 @@ dist/
 .vscode/
 *.png
 .business_context/
+.blueprint/
+.agents/
+.claude/
+.github/skills/
+CLAUDE.md
 
 # murmur8
 .claude/implement-queue.json

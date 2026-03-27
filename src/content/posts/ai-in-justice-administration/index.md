@@ -6,7 +6,7 @@ tags: [AI, governance, justice, software-engineering, public-sector]
 pose: enforcement
 ---
 
-Here is the tension at the heart of AI in justice administration: the principles governing responsible adoption are increasingly well understood, but the operational reality of who actually enforces those principles is not. That gap matters more here than in most sectors.
+There is the tension at the heart of AI in justice administration: the principles governing responsible adoption are increasingly well understood, but the operational reality of who actually enforces those principles is not. That gap matters more here than in most sectors.
 
 In England and Wales, policy, judicial guidance, and procedural consultation have already mapped the territory. AI can support, but must not replace, human judgment. The boundary between assistance and adjudication is held firmly. What remains unsettled is how responsible adoption functions in practice — and when you look closely at that question, it leads somewhere unexpected.
 
